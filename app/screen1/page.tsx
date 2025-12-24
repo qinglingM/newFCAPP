@@ -28,6 +28,7 @@ export default function Screen1() {
   const [ttsDuration, setTtsDuration] = useState(0); // Total duration in seconds
   const [articleSummaries, setArticleSummaries] = useState<{ [key: number]: string }>({});
   const [newsletterTitle, setNewsletterTitle] = useState<string>('');
+  const [showPlaybackControls, setShowPlaybackControls] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRefs = useRef<{ [key: number]: HTMLHeadingElement | null }>({});
   const isScrollingRef = useRef(false);
@@ -397,6 +398,7 @@ export default function Screen1() {
 
     utterance.onstart = () => {
       setIsPlayingTTS(true);
+      setShowPlaybackControls(true);
       
       // Update progress
       const fullDuration = ttsText.length / 10; // Full text duration
@@ -451,6 +453,7 @@ export default function Screen1() {
     } else {
       synthRef.current.resume();
       setIsPlayingTTS(true);
+      setShowPlaybackControls(true);
     }
   };
 
@@ -800,6 +803,7 @@ export default function Screen1() {
       </div>
 
       {/* Bottom playback controls */}
+      {showPlaybackControls && (
       <div className="fixed bottom-0 left-0 right-0 w-full max-w-md mx-auto px-3 sm:px-4 bg-white pb-safe sm:pb-4 pt-2">
         <div className="h-0.5 bg-gray-200 mb-2 sm:mb-3">
           <div 
@@ -858,6 +862,7 @@ export default function Screen1() {
                   setTtsProgress(0);
                   setTtsCurrentTime(0);
                   setTtsDuration(0);
+                  setShowPlaybackControls(false);
                 }
               }}
             >
@@ -868,6 +873,7 @@ export default function Screen1() {
           </div>
         </div>
       </div>
+      )}
 
       {/* Audio Player Modal */}
       <AudioPlayerModal
