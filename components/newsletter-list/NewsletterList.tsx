@@ -26,30 +26,31 @@ export const NewsletterList: React.FC<NewsletterListProps> = ({ items }) => {
                 // Using mock data; dev team will replace with real navigation/action.
                 console.log('newsletter clicked', item.id);
               }}
-              className="w-full min-h-0 text-left px-4 sm:px-6 py-1.5 sm:py-5 hover:bg-gray-50 active:bg-gray-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900 focus-visible:outline-offset-2"
+              className="w-full min-h-0 text-left px-4 sm:px-6 py-1 sm:py-5 hover:bg-gray-50 active:bg-gray-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900 focus-visible:outline-offset-2"
               aria-label={`Open newsletter: ${item.title}`}
             >
-              <div className="flex items-center gap-3 sm:gap-6">
+              <div className="flex items-center gap-2.5 sm:gap-6">
                 <div className="shrink-0">
                   <div className="bg-gray-100 rounded-sm overflow-hidden">
                     <Image
                       src={item.thumbnailUrl}
                       alt=""
                       aria-hidden="true"
-                      width={56}
-                      height={56}
-                      className="h-10 w-10 sm:h-20 sm:w-20 object-cover"
+                      width={48}
+                      height={48}
+                      className="h-9 w-9 sm:h-20 sm:w-20 object-cover"
                     />
                   </div>
                 </div>
                 <div className="min-w-0 flex-1">
                   <h2
-                    className="text-[12px] sm:text-3xl font-medium text-black leading-[1.15] truncate sm:whitespace-normal"
+                    className="text-[11px] sm:text-3xl font-medium text-black leading-[1.1] overflow-hidden text-ellipsis whitespace-nowrap"
                     style={{ fontFamily: 'Georgia, serif' }}
+                    title={item.title}
                   >
                     {item.title}
                   </h2>
-                  <div className="mt-0.5 flex items-center gap-2 text-[9px] sm:text-sm font-semibold tracking-wide text-black uppercase leading-none">
+                  <div className="mt-0.5 flex items-center gap-1.5 text-[8px] sm:text-sm font-semibold tracking-wide text-black uppercase leading-none">
                     <span className="truncate">{item.authorName}</span>
                     <span aria-hidden="true">•</span>
                     <span>{item.readMinutes} MIN</span>
