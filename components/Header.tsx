@@ -6,28 +6,35 @@ import { useRouter } from 'next/navigation';
 interface HeaderProps {
   showPlayButton?: boolean;
   showGiftBookmark?: boolean;
+  compact?: boolean;
 }
 
-export const Header = ({ showPlayButton = true, showGiftBookmark = false }: HeaderProps) => {
+export const Header = ({ showPlayButton = true, showGiftBookmark = false, compact = false }: HeaderProps) => {
   const router = useRouter();
 
   const handleBack = () => {
     router.push('/');
   };
 
+  const containerClassName = compact
+    ? 'flex justify-between items-center px-3 sm:px-4 py-1 gap-2'
+    : 'flex justify-between items-center px-3 sm:px-4 py-2 gap-2';
+
+  const iconClassName = compact ? 'mr-0.5 sm:mr-1 sm:w-6 sm:h-6' : 'mr-0.5 sm:mr-1 sm:w-6 sm:h-6';
+
   return (
-    <div className="flex justify-between items-center px-3 sm:px-4 py-2 gap-2">
-      <button 
+    <div className={containerClassName}>
+      <button
         onClick={handleBack}
-        className="flex items-center hover:opacity-80 transition-opacity touch-manipulation p-1 -ml-1"
+        className="flex items-center hover:opacity-80 transition-opacity touch-manipulation p-1 -ml-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900 focus-visible:outline-offset-2"
         aria-label="返回首页"
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="mr-0.5 sm:mr-1 sm:w-6 sm:h-6">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className={iconClassName}>
           <path d="M15 18L9 12L15 6" stroke="#DC2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
         <span className="text-hark-red text-sm sm:text-base font-medium hidden xs:inline">Home</span>
       </button>
-      
+
       {showGiftBookmark ? (
         <div className="flex items-center gap-3 sm:gap-4">
           <button className="touch-manipulation p-1" aria-label="Gift">
@@ -55,4 +62,3 @@ export const Header = ({ showPlayButton = true, showGiftBookmark = false }: Head
     </div>
   );
 };
-
