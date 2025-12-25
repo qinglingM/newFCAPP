@@ -1,7 +1,5 @@
 'use client';
 
-/* eslint-disable react/no-unescaped-entities */
-
 // Screen 1: Article reading view with playback controls at bottom
 // Matches first screenshot: article content with "NOW PLAYING" button and playback controls
 
@@ -9,9 +7,11 @@ import { useState, useEffect, useRef } from 'react';
 import { Header } from "@/components/Header";
 import { articles } from "@/mock/articles";
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { AudioPlayerModal } from "@/components/AudioPlayerModal";
 import { SubscriptionModal } from "@/components/SubscriptionModal";
 import { SUMMARY_PROMPT } from "@/lib/articleConfig";
+import { slugify } from '@/lib/slug';
 
 export default function Screen1() {
   const router = useRouter();
@@ -760,9 +760,14 @@ export default function Screen1() {
                   
                   {/* Author and date */}
                   <div className="flex flex-col items-center mb-2 gap-2">
-                    <p className="text-sm sm:text-base text-gray-600 break-words text-center" style={{ fontFamily: 'Georgia, serif' }}>
+                    <Link
+                      href={`/channel/${slugify(isFirstArticle ? 'Justin Mares' : article.author)}`}
+                      className="text-sm sm:text-base text-gray-600 break-words text-center hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900 focus-visible:outline-offset-2"
+                      style={{ fontFamily: 'Georgia, serif' }}
+                      aria-label={`View channel for ${isFirstArticle ? 'Justin Mares' : article.author}`}
+                    >
                       By {isFirstArticle ? 'Justin Mares' : article.author}
-                    </p>
+                    </Link>
                     <p className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-wider text-center">
                       {isFirstArticle ? 'OCT 28, 2025' : article.date}
                     </p>
@@ -785,7 +790,7 @@ export default function Screen1() {
                   {/* You'll get section */}
                   <div className="mt-[100px] grid">
                     <h2 className="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4 break-words font-atlantic-condensed text-center" style={{ fontFamily: 'Atlantic Condensed, Georgia, serif' }}>
-                      You'll get :
+                      You’ll get:
                     </h2>
                     
                     <ul className="space-y-2 sm:space-y-2.5 flex flex-col items-center">
