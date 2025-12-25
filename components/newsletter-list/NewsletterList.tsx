@@ -26,7 +26,7 @@ export const NewsletterList: React.FC<NewsletterListProps> = ({ items }) => {
                 // Using mock data; dev team will replace with real navigation/action.
                 console.log('newsletter clicked', item.id);
               }}
-              className="w-full min-h-0 text-left px-4 sm:px-6 py-0.5 sm:py-5 hover:bg-gray-50 active:bg-gray-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900 focus-visible:outline-offset-2"
+              className="w-full min-h-0 text-left px-4 sm:px-6 py-0 sm:py-5 hover:bg-gray-50 active:bg-gray-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900 focus-visible:outline-offset-2"
               aria-label={`Open newsletter: ${item.title}`}
             >
               <div className="flex items-center gap-2.5 sm:gap-6">
