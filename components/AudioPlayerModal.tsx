@@ -4,6 +4,7 @@
 // Slides up from bottom like SubscriptionModal
 
 import { mockArticle } from "@/mock/article";
+import Image from "next/image";
 
 interface AudioPlayerModalProps {
   isOpen: boolean;
@@ -108,9 +109,8 @@ export const AudioPlayerModal: React.FC<AudioPlayerModalProps> = ({
 
             {/* Playback controls */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6 flex-wrap">
-              {/* Rewind 15 seconds - circular arrow counter-clockwise with "15" inside */}
-              <button 
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-800 flex items-center justify-center bg-white relative touch-manipulation" 
+              <button
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-800 flex items-center justify-center bg-white relative touch-manipulation"
                 aria-label="Rewind 15 seconds"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -119,17 +119,18 @@ export const AudioPlayerModal: React.FC<AudioPlayerModalProps> = ({
                   }
                 }}
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="absolute">
-                  <circle cx="12" cy="12" r="10" stroke="#1F2937" strokeWidth="2" fill="none"/>
-                  <path d="M12 8L8 12L12 16" stroke="#1F2937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 12H16" stroke="#1F2937" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-                <span className="text-xs sm:text-sm font-bold text-gray-800 relative z-10">15</span>
+                <Image
+                  src="/icons/rewind-15.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={28}
+                  height={28}
+                  className="h-7 w-7 sm:h-8 sm:w-8"
+                />
               </button>
-              
-              {/* Play/Pause button - large solid right-pointing triangle or pause bars */}
-              <button 
-                className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center touch-manipulation" 
+
+              <button
+                className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center touch-manipulation"
                 aria-label={isPlaying ? 'Pause' : 'Play'}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -149,10 +150,9 @@ export const AudioPlayerModal: React.FC<AudioPlayerModalProps> = ({
                   </svg>
                 )}
               </button>
-              
-              {/* Forward 15 seconds - circular arrow clockwise with "15" inside */}
-              <button 
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-800 flex items-center justify-center bg-white relative touch-manipulation" 
+
+              <button
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-800 flex items-center justify-center bg-white relative touch-manipulation"
                 aria-label="Forward 15 seconds"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -161,12 +161,14 @@ export const AudioPlayerModal: React.FC<AudioPlayerModalProps> = ({
                   }
                 }}
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="absolute">
-                  <circle cx="12" cy="12" r="10" stroke="#1F2937" strokeWidth="2" fill="none"/>
-                  <path d="M12 8L16 12L12 16" stroke="#1F2937" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M8 12H16" stroke="#1F2937" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-                <span className="text-xs sm:text-sm font-bold text-gray-800 relative z-10">15</span>
+                <Image
+                  src="/icons/forward-15.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={28}
+                  height={28}
+                  className="h-7 w-7 sm:h-8 sm:w-8"
+                />
               </button>
             </div>
 
