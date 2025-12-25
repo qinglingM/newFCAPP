@@ -1,5 +1,7 @@
 'use client';
 
+/* eslint-disable react/no-unescaped-entities */
+
 // Screen 5: Article detail/landing page
 // Lenny's Newsletter article content
 

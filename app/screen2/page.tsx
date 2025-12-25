@@ -1,5 +1,7 @@
 'use client';
 
+/* eslint-disable react/no-unescaped-entities */
+
 // Screen 2: Article reading view with "View More" section
 // Matches second screenshot: article content with "Explore the September 2025 Issue" section
 

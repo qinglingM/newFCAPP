@@ -110,7 +110,7 @@ export const AudioPlayerModal: React.FC<AudioPlayerModalProps> = ({
             {/* Playback controls */}
             <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6 flex-wrap">
               <button
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-800 flex items-center justify-center bg-white relative touch-manipulation"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-900 ring-2 ring-gray-900 ring-inset flex items-center justify-center bg-white relative touch-manipulation"
                 aria-label="Rewind 15 seconds"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -152,7 +152,7 @@ export const AudioPlayerModal: React.FC<AudioPlayerModalProps> = ({
               </button>
 
               <button
-                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-800 flex items-center justify-center bg-white relative touch-manipulation"
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gray-900 ring-2 ring-gray-900 ring-inset flex items-center justify-center bg-white relative touch-manipulation"
                 aria-label="Forward 15 seconds"
                 onClick={(e) => {
                   e.stopPropagation();

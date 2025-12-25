@@ -1,5 +1,7 @@
 'use client';
 
+/* eslint-disable react/no-unescaped-entities */
+
 // Screen 1: Article reading view with playback controls at bottom
 // Matches first screenshot: article content with "NOW PLAYING" button and playback controls
 

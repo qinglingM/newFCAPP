@@ -1,5 +1,7 @@
 'use client';
 
+/* eslint-disable react/no-unescaped-entities */
+
 // Screen 4: Article detail/landing page
 // Matches fourth screenshot: article landing page with photo-illustration, category, title, lead, author, date
 
