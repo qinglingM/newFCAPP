@@ -44,13 +44,13 @@ export const NewsletterList: React.FC<NewsletterListProps> = ({ items }) => {
                 </div>
                 <div className="min-w-0 flex-1">
                   <h2
-                    className="text-[10px] sm:text-3xl font-medium text-black leading-[1.1] overflow-hidden text-ellipsis whitespace-nowrap"
+                    className="text-[5px] sm:text-3xl font-medium text-black leading-[1.1] overflow-hidden text-ellipsis whitespace-nowrap"
                     style={{ fontFamily: 'Georgia, serif' }}
                     title={item.title}
                   >
                     {item.title}
                   </h2>
-                  <div className="mt-0.5 flex items-center gap-1.5 text-[8px] sm:text-sm font-semibold tracking-wide text-black uppercase leading-none">
+                  <div className="mt-0.5 flex items-center gap-1.5 text-[4px] sm:text-sm font-semibold tracking-wide text-black uppercase leading-none">
                     <span className="truncate">{item.authorName}</span>
                     <span aria-hidden="true">•</span>
                     <span>{item.readMinutes} MIN</span>

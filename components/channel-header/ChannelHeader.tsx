@@ -25,13 +25,13 @@ export const ChannelHeader: React.FC<ChannelHeaderProps> = ({ imageUrl, name, de
           </div>
           <div className="min-w-0 flex-1">
             <h1
-              className="text-[15px] sm:text-4xl font-semibold text-black leading-tight break-words"
+              className="text-[7.5px] sm:text-4xl font-semibold text-black leading-tight break-words"
               style={{ fontFamily: 'Georgia, serif' }}
             >
               {name}
             </h1>
             <p
-              className="mt-0.5 text-[10px] sm:text-base text-gray-700 leading-tight break-words truncate"
+              className="mt-0.5 text-[5px] sm:text-base text-gray-700 leading-tight break-words truncate"
               style={{ fontFamily: 'Georgia, serif' }}
               title={description}
             >
