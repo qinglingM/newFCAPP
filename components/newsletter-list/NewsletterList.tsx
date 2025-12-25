@@ -26,30 +26,30 @@ export const NewsletterList: React.FC<NewsletterListProps> = ({ items }) => {
                 // Using mock data; dev team will replace with real navigation/action.
                 console.log('newsletter clicked', item.id);
               }}
-              className="w-full text-left px-4 sm:px-6 py-5 sm:py-6 hover:bg-gray-50 active:bg-gray-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900 focus-visible:outline-offset-2"
+              className="w-full text-left px-4 sm:px-6 py-3.5 sm:py-5 hover:bg-gray-50 active:bg-gray-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-900 focus-visible:outline-offset-2"
               aria-label={`Open newsletter: ${item.title}`}
             >
-              <div className="flex items-start gap-4 sm:gap-6">
+              <div className="flex items-start gap-3 sm:gap-6">
                 <div className="shrink-0">
                   <div className="bg-gray-100 rounded-sm overflow-hidden">
                     <Image
                       src={item.thumbnailUrl}
                       alt=""
                       aria-hidden="true"
-                      width={96}
-                      height={96}
-                      className="h-16 w-16 sm:h-20 sm:w-20 object-cover"
+                      width={80}
+                      height={80}
+                      className="h-14 w-14 sm:h-20 sm:w-20 object-cover"
                     />
                   </div>
                 </div>
                 <div className="min-w-0">
                   <h2
-                    className="text-xl sm:text-3xl font-medium text-black leading-snug break-words"
+                    className="text-[15px] sm:text-3xl font-medium text-black leading-snug break-words"
                     style={{ fontFamily: 'Georgia, serif' }}
                   >
                     {item.title}
                   </h2>
-                  <div className="mt-2 flex items-center gap-2 text-xs sm:text-sm font-semibold tracking-wide text-black uppercase">
+                  <div className="mt-1.5 flex items-center gap-2 text-[11px] sm:text-sm font-semibold tracking-wide text-black uppercase">
                     <span className="break-words">{item.authorName}</span>
                     <span aria-hidden="true">•</span>
                     <span>{item.readMinutes} MIN</span>
