@@ -36,9 +36,9 @@ export const NewsletterList: React.FC<NewsletterListProps> = ({ items }) => {
                       src={item.thumbnailUrl}
                       alt=""
                       aria-hidden="true"
-                      width={48}
-                      height={48}
-                      className="h-9 w-9 sm:h-20 sm:w-20 object-cover"
+                      width={40}
+                      height={40}
+                      className="h-8 w-8 sm:h-20 sm:w-20 object-cover"
                     />
                   </div>
                 </div>
