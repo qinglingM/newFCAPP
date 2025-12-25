@@ -17,9 +17,9 @@ export interface NewsletterListProps {
 export const NewsletterList: React.FC<NewsletterListProps> = ({ items }) => {
   return (
     <div className="bg-white">
-      <ul className="divide-y divide-gray-200">
+      <ul className="divide-y divide-gray-200 [&>li]:my-0">
         {items.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="m-0">
             <button
               type="button"
               onClick={() => {
