@@ -91,3 +91,8 @@ html, body {
   }
 }
 
+
+/* Hide Next.js dev overlay portal (dev only) */
+body[data-env="development"] nextjs-portal {
+  display: none !important;
+}
